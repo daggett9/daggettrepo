@@ -269,6 +269,11 @@
             Provides various argument matching shortcuts.
             </summary>
         </member>
+        <member name="P:Telerik.JustMock.Arg.Expr">
+            <summary>
+            Specifies argument matchers used in non-public method arrangements.
+            </summary>
+        </member>
         <member name="M:Telerik.JustMock.Arg.Matches``1(System.Linq.Expressions.Expression{System.Predicate{``0}})">
             <summary>
             Matches argument for the expected condition.
@@ -438,6 +443,9 @@
             Allows specification of a matching condition for an argument for a non-public method, rather
             a specific value.
             </summary>
+            <summary>
+            Provides various argument matching shortcuts.
+            </summary>
         </member>
         <member name="M:Telerik.JustMock.ArgExpr.IsAny``1">
             <summary>
@@ -478,6 +486,86 @@
             <typeparam name="T">Type for the argument</typeparam>
             <param name="value">Value to match.</param>
             <returns>Argument type</returns>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyInt">
+            <summary>
+            Matches argument can contain any int value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyFloat">
+            <summary>
+            Matches argument can contain any float value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyDouble">
+            <summary>
+            Matches argument can contain any double value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyDecimal">
+            <summary>
+            Matches argument can contain any decimal value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyLong">
+            <summary>
+            Matches argument can contain any long value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyChar">
+            <summary>
+            Matches argument can contain any char value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyString">
+            <summary>
+            Matches argument can contain any string value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyObject">
+            <summary>
+            Matches argument can contain any object value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyShort">
+            <summary>
+            Matches argument can contain any short value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyBool">
+            <summary>
+            Matches argument can contain any bool value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyGuid">
+            <summary>
+            Matches argument can contain any Guid value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyDateTime">
+            <summary>
+            Matches argument can contain any DateTime value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyTimeSpan">
+            <summary>
+            Matches argument can contain any TimeSpan value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyByte">
+            <summary>
+            Matches argument can contain any byte value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnySByte">
+            <summary>
+            Matches argument can contain any SByte value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.ArgExpr.AnyUri">
+            <summary>
+            Matches argument can contain any Uri value.
+            </summary>
         </member>
         <member name="T:Telerik.JustMock.Args">
             <summary>
@@ -2743,6 +2831,18 @@
             </summary>
             <param name="m">The modules to load.</param>
         </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.IKernel.Load(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Loads modules from the files that match the specified pattern(s).
+            </summary>
+            <param name="filePatterns">The file patterns (i.e. "*.dll", "modules/*.rb") to match.</param>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.IKernel.Load(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+            Loads modules defined in the specified assemblies.
+            </summary>
+            <param name="assemblies">The assemblies to search.</param>
+        </member>
         <member name="M:Telerik.JustMock.AutoMock.Ninject.IKernel.Unload(System.String)">
             <summary>
             Unloads the plugin with the specified name.
@@ -3293,6 +3393,16 @@
             Gets the default scope callback.
             </summary>
         </member>
+        <member name="P:Telerik.JustMock.AutoMock.Ninject.INinjectSettings.LoadExtensions">
+            <summary>
+            Gets a value indicating whether the kernel should automatically load extensions at startup.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.AutoMock.Ninject.INinjectSettings.ExtensionSearchPatterns">
+            <summary>
+            Gets the paths that should be searched for extensions.
+            </summary>
+        </member>
         <member name="P:Telerik.JustMock.AutoMock.Ninject.INinjectSettings.UseReflectionBasedInjection">
             <summary>
             Gets a value indicating whether Ninject should use reflection-based injection instead of
@@ -3544,6 +3654,18 @@
             </summary>
             <param name="m">The modules to load.</param>
         </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.KernelBase.Load(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Loads modules from the files that match the specified pattern(s).
+            </summary>
+            <param name="filePatterns">The file patterns (i.e. "*.dll", "modules/*.rb") to match.</param>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.KernelBase.Load(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+            Loads modules defined in the specified assemblies.
+            </summary>
+            <param name="assemblies">The assemblies to search.</param>
+        </member>
         <member name="M:Telerik.JustMock.AutoMock.Ninject.KernelBase.Unload(System.String)">
             <summary>
             Unloads the plugin with the specified name.
@@ -3660,6 +3782,89 @@
             <param name="binding">The binding.</param>
             <returns>The created context.</returns>
         </member>
+        <member name="T:Telerik.JustMock.AutoMock.Ninject.Modules.AssemblyNameRetriever">
+            <summary>
+            Retrieves assembly names from file names using a temporary app domain.
+            </summary>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.Modules.AssemblyNameRetriever.GetAssemblyNames(System.Collections.Generic.IEnumerable{System.String},System.Predicate{System.Reflection.Assembly})">
+            <summary>
+            Gets all assembly names of the assemblies in the given files that match the filter.
+            </summary>
+            <param name="filenames">The filenames.</param>
+            <param name="filter">The filter.</param>
+            <returns>All assembly names of the assemblies in the given files that match the filter.</returns>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.Modules.AssemblyNameRetriever.CreateTemporaryAppDomain">
+            <summary>
+            Creates a temporary app domain.
+            </summary>
+            <returns>The created app domain.</returns>
+        </member>
+        <member name="T:Telerik.JustMock.AutoMock.Ninject.Modules.AssemblyNameRetriever.AssemblyChecker">
+            <summary>
+            This class is loaded into the temporary appdomain to load and check if the assemblies match the filter.
+            </summary>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.Modules.AssemblyNameRetriever.AssemblyChecker.GetAssemblyNames(System.Collections.Generic.IEnumerable{System.String},System.Predicate{System.Reflection.Assembly})">
+            <summary>
+            Gets the assembly names of the assemblies matching the filter.
+            </summary>
+            <param name="filenames">The filenames.</param>
+            <param name="filter">The filter.</param>
+            <returns>All assembly names of the assemblies matching the filter.</returns>
+        </member>
+        <member name="T:Telerik.JustMock.AutoMock.Ninject.Modules.CompiledModuleLoaderPlugin">
+            <summary>
+            Loads modules from compiled assemblies.
+            </summary>
+        </member>
+        <member name="F:Telerik.JustMock.AutoMock.Ninject.Modules.CompiledModuleLoaderPlugin.assemblyNameRetriever">
+            <summary>
+            The assembly name retriever.
+            </summary>
+        </member>
+        <member name="F:Telerik.JustMock.AutoMock.Ninject.Modules.CompiledModuleLoaderPlugin.Extensions">
+            <summary>
+            The file extensions that are supported.
+            </summary>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.Modules.CompiledModuleLoaderPlugin.#ctor(Telerik.JustMock.AutoMock.Ninject.IKernel,Telerik.JustMock.AutoMock.Ninject.Modules.IAssemblyNameRetriever)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.JustMock.AutoMock.Ninject.Modules.CompiledModuleLoaderPlugin"/> class.
+            </summary>
+            <param name="kernel">The kernel into which modules will be loaded.</param>
+            <param name="assemblyNameRetriever">The assembly name retriever.</param>
+        </member>
+        <member name="P:Telerik.JustMock.AutoMock.Ninject.Modules.CompiledModuleLoaderPlugin.Kernel">
+            <summary>
+            Gets the kernel into which modules will be loaded.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.AutoMock.Ninject.Modules.CompiledModuleLoaderPlugin.SupportedExtensions">
+            <summary>
+            Gets the file extensions that the plugin understands how to load.
+            </summary>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.Modules.CompiledModuleLoaderPlugin.LoadModules(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Loads modules from the specified files.
+            </summary>
+            <param name="filenames">The names of the files to load modules from.</param>
+        </member>
+        <member name="T:Telerik.JustMock.AutoMock.Ninject.Modules.IAssemblyNameRetriever">
+            <summary>
+            Retrieves assembly names from file names using a temporary app domain.
+            </summary>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.Modules.IAssemblyNameRetriever.GetAssemblyNames(System.Collections.Generic.IEnumerable{System.String},System.Predicate{System.Reflection.Assembly})">
+            <summary>
+            Gets all assembly names of the assemblies in the given files that match the filter.
+            </summary>
+            <param name="filenames">The filenames.</param>
+            <param name="filter">The filter.</param>
+            <returns>All assembly names of the assemblies in the given files that match the filter.</returns>
+        </member>
         <member name="T:Telerik.JustMock.AutoMock.Ninject.Modules.IModuleLoader">
             <summary>
             Finds modules defined in external files.
@@ -3713,6 +3918,28 @@
             <summary>
             Called after loading the modules. A module can verify here if all other required modules are loaded.
             </summary>
+        </member>
+        <member name="T:Telerik.JustMock.AutoMock.Ninject.Modules.ModuleLoader">
+            <summary>
+            Automatically finds and loads modules from assemblies.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.AutoMock.Ninject.Modules.ModuleLoader.Kernel">
+            <summary>
+            Gets or sets the kernel into which modules will be loaded.
+            </summary>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.Modules.ModuleLoader.#ctor(Telerik.JustMock.AutoMock.Ninject.IKernel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.JustMock.AutoMock.Ninject.Modules.ModuleLoader"/> class.
+            </summary>
+            <param name="kernel">The kernel into which modules will be loaded.</param>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.Modules.ModuleLoader.LoadModules(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Loads any modules found in the files that match the specified patterns.
+            </summary>
+            <param name="patterns">The patterns to search.</param>
         </member>
         <member name="T:Telerik.JustMock.AutoMock.Ninject.Modules.NinjectModule">
             <summary>
@@ -3813,6 +4040,16 @@
         <member name="P:Telerik.JustMock.AutoMock.Ninject.NinjectSettings.DefaultScopeCallback">
             <summary>
             Gets or sets the default scope callback.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.AutoMock.Ninject.NinjectSettings.LoadExtensions">
+            <summary>
+            Gets or sets a value indicating whether the kernel should automatically load extensions at startup.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.AutoMock.Ninject.NinjectSettings.ExtensionSearchPatterns">
+            <summary>
+            Gets or sets the paths that should be searched for extensions.
             </summary>
         </member>
         <member name="P:Telerik.JustMock.AutoMock.Ninject.NinjectSettings.UseReflectionBasedInjection">
@@ -7235,6 +7472,20 @@
             <param name="kernel">The kernel.</param>
             <param name="modules">The modules to load.</param>
         </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.ModuleLoadExtensions.Load(Telerik.JustMock.AutoMock.Ninject.IKernel,System.String[])">
+            <summary>
+            Loads modules from the files that match the specified pattern(s).
+            </summary>
+            <param name="kernel">The kernel.</param>
+            <param name="filePatterns">The file patterns (i.e. "*.dll", "modules/*.rb") to match.</param>
+        </member>
+        <member name="M:Telerik.JustMock.AutoMock.Ninject.ModuleLoadExtensions.Load(Telerik.JustMock.AutoMock.Ninject.IKernel,System.Reflection.Assembly[])">
+            <summary>
+            Loads modules defined in the specified assemblies.
+            </summary>
+            <param name="kernel">The kernel.</param>
+            <param name="assemblies">The assemblies to search.</param>
+        </member>
         <member name="T:Telerik.JustMock.AutoMock.Ninject.ResolutionExtensions">
             <summary>
             Extensions that enhance resolution of services.
@@ -7582,6 +7833,91 @@
             <summary>
             Allow the use of the mocking API inside this method. You must explicitly call
             Mock.Reset() at the end of your test method.
+            </summary>
+        </member>
+        <member name="T:Telerik.JustMock.Core.ArgExprImplementation">
+            <summary>
+            Provides various argument matching shortcuts.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyInt">
+            <summary>
+            Matches argument can contain any int value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyFloat">
+            <summary>
+            Matches argument can contain any float value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyDouble">
+            <summary>
+            Matches argument can contain any double value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyDecimal">
+            <summary>
+            Matches argument can contain any decimal value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyLong">
+            <summary>
+            Matches argument can contain any long value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyChar">
+            <summary>
+            Matches argument can contain any char value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyString">
+            <summary>
+            Matches argument can contain any string value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyObject">
+            <summary>
+            Matches argument can contain any object value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyShort">
+            <summary>
+            Matches argument can contain any short value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyBool">
+            <summary>
+            Matches argument can contain any bool value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyGuid">
+            <summary>
+            Matches argument can contain any Guid value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyDateTime">
+            <summary>
+            Matches argument can contain any DateTime value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyTimeSpan">
+            <summary>
+            Matches argument can contain any TimeSpan value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyByte">
+            <summary>
+            Matches argument can contain any byte value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnySByte">
+            <summary>
+            Matches argument can contain any SByte value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.Core.ArgExprImplementation.AnyUri">
+            <summary>
+            Matches argument can contain any Uri value.
             </summary>
         </member>
         <member name="T:Telerik.JustMock.Core.Behaviors.IEventsMixin">
@@ -13101,9 +13437,9 @@
             when there's a need to disambiguate between overloads, or when you need to specify
             matchers for the arguments using. Arguments are passed using either constant objects
             when a specific value needs to be matched, or using one of the members of the
-            <see cref="T:Telerik.JustMock.ArgExpr"/> class. If a member is not overloaded and you want the arrangement
+            <see cref="P:Telerik.JustMock.Arg.Expr"/> class. If a member is not overloaded and you want the arrangement
             to work for all arguments, then you can specify just the name of the member and omit
-            all arguments. This is equivalent to passing the correct ArgExpr.IsAny&lt;T&gt;() arguments
+            all arguments. This is equivalent to passing the correct Arg.Expr.IsAny&lt;T&gt;() arguments
             or adding the .IgnoreArguments() clause.
             </remarks>
         </member>
@@ -13113,7 +13449,7 @@
             </summary>
             <param name="target">Target instance</param>
             <param name="memberName">Member name</param>
-            <param name="args">Method arguments</param>
+            <param name="args">Method arguments. Use <see cref="P:Telerik.JustMock.Arg.Expr"/> for predefined argument matchers.</param>
             <returns>Reference to setup actions calls</returns>
         </member>
         <member name="M:Telerik.JustMock.Expectations.Abstraction.INonPublicExpectation.Arrange(System.Object,System.String,System.Type[],System.Object[])">
@@ -13123,7 +13459,7 @@
             <param name="target">Target instance</param>
             <param name="memberName">Member name</param>
             <param name="typeArguments">Generic type arguments of the member specified by memberName</param>
-            <param name="args">Method arguments</param>
+            <param name="args">Method arguments. Use <see cref="P:Telerik.JustMock.Arg.Expr"/> for predefined argument matchers.</param>
             <returns>Reference to setup actions calls</returns>
         </member>
         <member name="M:Telerik.JustMock.Expectations.Abstraction.INonPublicExpectation.Arrange(System.Object,System.Reflection.MethodInfo,System.Object[])">
@@ -13132,7 +13468,7 @@
             </summary>
             <param name="target">Target instance</param>
             <param name="method">Method to setup taken from reflection.</param>
-            <param name="args">Method arguments</param>
+            <param name="args">Method arguments. Use <see cref="P:Telerik.JustMock.Arg.Expr"/> for predefined argument matchers.</param>
             <returns>Reference to setup actions calls</returns>
         </member>
         <member name="M:Telerik.JustMock.Expectations.Abstraction.INonPublicExpectation.Arrange``1(System.Object,System.String,System.Object[])">
@@ -13142,7 +13478,7 @@
             <typeparam name="TReturn">Return type</typeparam>
             <param name="target">Target instance.</param>
             <param name="memberName">Target member name</param>
-            <param name="args">Method arguments</param>
+            <param name="args">Method arguments. Use <see cref="P:Telerik.JustMock.Arg.Expr"/> for predefined argument matchers.</param>
         </member>
         <member name="M:Telerik.JustMock.Expectations.Abstraction.INonPublicExpectation.Arrange``1(System.Object,System.String,System.Type[],System.Object[])">
             <summary>
@@ -13152,7 +13488,7 @@
             <param name="target">Target instance.</param>
             <param name="memberName">Target member name</param>
             <param name="typeArguments">Generic type arguments of the member specified by memberName</param>
-            <param name="args">Method arguments</param>
+            <param name="args">Method arguments. Use <see cref="P:Telerik.JustMock.Arg.Expr"/> for predefined argument matchers.</param>
         </member>
         <member name="M:Telerik.JustMock.Expectations.Abstraction.INonPublicExpectation.Arrange``1(System.Object,System.Reflection.MethodInfo,System.Object[])">
             <summary>
@@ -13161,7 +13497,7 @@
             <typeparam name="TReturn">Return type</typeparam>
             <param name="target">Target instance</param>
             <param name="method">Method to setup taken from reflection.</param>
-            <param name="args">Method arguments</param>
+            <param name="args">Method arguments. Use <see cref="P:Telerik.JustMock.Arg.Expr"/> for predefined argument matchers.</param>
             <returns>Reference to setup actions calls</returns>
         </member>
         <member name="M:Telerik.JustMock.Expectations.Abstraction.INonPublicExpectation.ArrangeSet(System.Object,System.String,System.Object)">
@@ -13170,7 +13506,7 @@
             </summary>
             <param name="target">Target instance</param>
             <param name="propertyName">Property name</param>
-            <param name="value">Property value</param>
+            <param name="value">Property value. Use <see cref="P:Telerik.JustMock.Arg.Expr"/> for predefined argument matchers.</param>
             <returns>Reference to setup actions calls</returns>
         </member>
         <member name="M:Telerik.JustMock.Expectations.Abstraction.INonPublicExpectation.ArrangeSet``1(System.String,System.Object)">
@@ -13179,7 +13515,7 @@
             </summary>
             <typeparam name="T">Type that contains the non-public static property</typeparam>
             <param name="propertyName">Property name</param>
-            <param name="value">Property value</param>
+            <param name="value">Property value. Use <see cref="P:Telerik.JustMock.Arg.Expr"/> for predefined argument matchers.</param>
             <returns>Reference to setup actions calls</returns>
         </member>
         <member name="M:Telerik.JustMock.Expectations.Abstraction.INonPublicExpectation.ArrangeSet(System.Type,System.String,System.Object)">
@@ -13188,7 +13524,7 @@
             </summary>
             <param name="type">Type that contains the non-public static property</param>
             <param name="propertyName">Property name</param>
-            <param name="value">Property value</param>
+            <param name="value">Property value. Use <see cref="P:Telerik.JustMock.Arg.Expr"/> for predefined argument matchers.</param>
             <returns>Reference to setup actions calls</returns>
         </member>
         <member name="M:Telerik.JustMock.Expectations.Abstraction.INonPublicExpectation.Assert``1(System.Object,System.String,System.Object[])">
@@ -16420,6 +16756,135 @@
             <param name="behavior">The behavior after the last value has been returned.</param>
             <returns>Reference to <see cref="T:Telerik.JustMock.Expectations.Abstraction.IAssertable"/> interface.</returns>
         </member>
+        <member name="T:Telerik.JustMock.IArgExpr">
+            <summary>
+            Allows specification of a matching condition for an argument for a non-public method, rather
+            a specific value.
+            </summary>
+            <summary>
+            Provides various argument matching shortcuts.
+            </summary>
+        </member>
+        <member name="M:Telerik.JustMock.IArgExpr.IsAny``1">
+            <summary>
+            Matches argument for any value.
+            </summary>
+            <typeparam name="T">Type for the argument</typeparam>
+            <returns>Argument type</returns>
+        </member>
+        <member name="M:Telerik.JustMock.IArgExpr.Matches``1(System.Linq.Expressions.Expression{System.Predicate{``0}})">
+            <summary>
+            Matches argument for the expected condition.
+            </summary>
+            <typeparam name="T">
+            Contains the type of the argument.
+            </typeparam>
+            <param name="match">Matcher expression</param>
+            <returns>Argument type</returns>
+        </member>
+        <member name="M:Telerik.JustMock.IArgExpr.IsNull``1">
+            <summary>
+            Matches argument for null value.
+            </summary>
+            <typeparam name="T">Type for the argument</typeparam>
+            <returns>Argument type</returns>
+        </member>
+        <member name="M:Telerik.JustMock.IArgExpr.Out``1(``0)">
+            <summary>
+            Returns a value from a ref or out argument.
+            </summary>
+            <typeparam name="T">Type for the argument</typeparam>
+            <param name="value">Value to match.</param>
+            <returns>Argument type</returns>
+        </member>
+        <member name="M:Telerik.JustMock.IArgExpr.Ref``1(``0)">
+            <summary>
+            Matches a value for ref argument.
+            </summary>
+            <typeparam name="T">Type for the argument</typeparam>
+            <param name="value">Value to match.</param>
+            <returns>Argument type</returns>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyInt">
+            <summary>
+            Matches argument can contain any int value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyFloat">
+            <summary>
+            Matches argument can contain any float value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyDouble">
+            <summary>
+            Matches argument can contain any double value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyDecimal">
+            <summary>
+            Matches argument can contain any decimal value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyLong">
+            <summary>
+            Matches argument can contain any long value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyChar">
+            <summary>
+            Matches argument can contain any char value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyString">
+            <summary>
+            Matches argument can contain any string value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyObject">
+            <summary>
+            Matches argument can contain any object value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyShort">
+            <summary>
+            Matches argument can contain any short value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyBool">
+            <summary>
+            Matches argument can contain any bool value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyGuid">
+            <summary>
+            Matches argument can contain any Guid value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyDateTime">
+            <summary>
+            Matches argument can contain any DateTime value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyTimeSpan">
+            <summary>
+            Matches argument can contain any TimeSpan value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyByte">
+            <summary>
+            Matches argument can contain any byte value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnySByte">
+            <summary>
+            Matches argument can contain any SByte value.
+            </summary>
+        </member>
+        <member name="P:Telerik.JustMock.IArgExpr.AnyUri">
+            <summary>
+            Matches argument can contain any Uri value.
+            </summary>
+        </member>
         <member name="T:Telerik.JustMock.IPrivateRefReturnAccessor">
             <summary>
             Gives access to the non-public ref returns members of a type or instance.
@@ -17765,6 +18230,11 @@
             </summary>
             <param name="duration">Time duration to wait</param>
             <returns>IWaitDuration type</returns>
+        </member>
+        <member name="T:Telerik.JustMock.XUnit.AssertFailedException">
+            <summary>
+            Represents common assertion failure exception across 1.x and 2.x xUnit versions
+            </summary>
         </member>
     </members>
 </doc>

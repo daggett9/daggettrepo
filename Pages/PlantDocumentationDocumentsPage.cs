@@ -19,7 +19,8 @@ namespace Autotests.Pages
         public IWebElement JPGFileIcon => _driver.FindElement(By.XPath("//div[@id='nav-documents']//img[@src='/images/file-types/jpg.svg']"));
         public IWebElement DocumentsTable => _driver.FindElement(By.XPath("//div[@class='mt-4 grid-documents jsgrid']/div/table/tbody"));
         IList<IWebElement> TdCollection => DocumentsTable.FindElements(By.TagName("td"));
-
+        //string strMyXPath = "//button[@value='@folderID']";
+        public IWebElement ParentFolderButton => _driver.FindElement(By.XPath("//button[@value='@folderID']"));
 
 
         public PlantDocumentationDocumentsPage OpenPlantDocumentationDocumentsPage()
@@ -117,6 +118,12 @@ namespace Autotests.Pages
                 }
             }
             return isFound;
+        }
+        public PlantDocumentationDocumentsPage ClickParentFolderButton(string FolderId)
+        {
+            _driver.FindElement(By.XPath("//button[@value='" + FolderId + "']")).Click();
+            Wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.Id("manageFolders")));
+            return this;
         }
     }
 }

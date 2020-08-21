@@ -1,7 +1,9 @@
 ﻿using Autotests.PageObjects;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using SeleniumExtras.WaitHelpers;
 using System.Threading;
+using System.IO;
 
 namespace Autotests.Pages
 {
@@ -59,7 +61,13 @@ namespace Autotests.Pages
         }
         public UploadFromWindowPage ClickOneDriveIcon()
         {
+            Thread.Sleep(900);
             OneDriverIcon.Click();
+            return this;
+        }
+        public UploadFromWindowPage WaitForPageUpload()
+        {
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("idSIButton9")));
             return this;
         }
         public UploadFromWindowPage ClickDropBoxIcon()

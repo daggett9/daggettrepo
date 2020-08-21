@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Autotests.Pages;
 using Autotests.PageObjects;
+using System.Configuration;
 
 namespace Autotests
 {
@@ -15,6 +16,7 @@ namespace Autotests
         //DB Connection
         private DataBaseConnection _dbConn;
         public DataBaseConnection DbConn => _dbConn;
+        public string connString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
 
         public IWebDriver Driver
         {

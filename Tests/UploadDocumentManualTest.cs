@@ -4,8 +4,7 @@ using Autotests.PageObjects;
 using Autotests.Pages;
 using NUnit.Framework;
 using System;
-using System.Data;
-using System.Windows;
+using System.Configuration;
 
 namespace Autotests.Tests
 {
@@ -26,20 +25,15 @@ namespace Autotests.Tests
             //DataBaseConnection dataBaseConnection = new DataBaseConnection();
             //dataBaseConnection.Connection.Open();
 
-            //private static readonly string connectionString = "Server = 13.233.48.253; Database = MPulseERP; User Id = mpulse; password = MPul53p@$$";
-            //FolderRepository folderRepository = new FolderRepository(connectionString);
-
             Folder newFolder = new Folder
             {
                 FolderName = "ParentFolderFromAutoTest",
                 SiteId = 1,
                 Createdate = DateTime.Now
             };
-
-            FolderRepository folderRepository = new FolderRepository("Server = 13.233.48.253; Database = MPulseERP; User Id = mpulse; password = MPul53p@$$");
+            FolderRepository folderRepository = new FolderRepository(connString);
             folderRepository.CreateAndGetId(newFolder);
         }
-
 
         [Test, Category("Plant Documentation")]
         public void UploadDocumentManualFromComputer()
@@ -47,6 +41,7 @@ namespace Autotests.Tests
             UploadFileManualEntryPage uploadFileManualEntryPage = new UploadFileManualEntryPage(Driver);
             UploadFromWindowPage uploadFromWindowPage = new UploadFromWindowPage(Driver);
             PlantDocumentationDocumentsPage plantDocumentationDocumentsPage = new PlantDocumentationDocumentsPage(Driver);
+            FolderRepository folderRepository = new FolderRepository(connString);
 
             uploadFileManualEntryPage
                 .OpenUploadFilePage()
@@ -61,6 +56,10 @@ namespace Autotests.Tests
                 .TypeEndDate()
                 .ClickUploadButton()
                 .WaitForPageUpload();
+            string FolderId = folderRepository
+                .GetIdByFolderName().ToString();
+            plantDocumentationDocumentsPage
+                .ClickParentFolderButton(FolderId);
             Assert.AreEqual(true, plantDocumentationDocumentsPage.CheckDocumentExistence("ManualEntryfromAuto"));
         }
 
@@ -70,13 +69,26 @@ namespace Autotests.Tests
             UploadFileManualEntryPage uploadFileManualEntryPage = new UploadFileManualEntryPage(Driver);
             UploadFromWindowPage uploadFromWindowPage = new UploadFromWindowPage(Driver);
             PlantDocumentationDocumentsPage plantDocumentationDocumentsPage = new PlantDocumentationDocumentsPage(Driver);
+            FolderRepository folderRepository = new FolderRepository(connString);
+            OneDriveLoginPage oneDriveLoginPage = new OneDriveLoginPage(Driver);
+            OneDriveListOfFilesPage oneDriveListOfFilesPage = new OneDriveListOfFilesPage(Driver);
 
             uploadFileManualEntryPage
                 .OpenUploadFilePage()
                 .ClickChooseFileButton();
             uploadFromWindowPage
                 .ClearOneDriveCookies()
-                .ClickOneDriveIcon();
+                .ClickOneDriveIcon()
+                .WaitForPageUpload();
+            oneDriveLoginPage
+                .EnterMicrosoftLogin()
+                .ClickNextButton()
+                .EnterPassword()
+                .ClickSignInButton();
+            oneDriveListOfFilesPage
+                .ClickPlusIcon()
+                .ClickFileCheckbox()
+                .ClickSelectButton();
             uploadFileManualEntryPage
                 .SelectParentFolderToSave()
                 .TypeDocumentName("ManualEntryfromAuto")
@@ -85,6 +97,10 @@ namespace Autotests.Tests
                 .TypeEndDate()
                 .ClickUploadButton()
                 .WaitForPageUpload();
+            string FolderId = folderRepository
+                .GetIdByFolderName().ToString();
+            plantDocumentationDocumentsPage
+                .ClickParentFolderButton(FolderId);
             Assert.AreEqual(true, plantDocumentationDocumentsPage.CheckDocumentExistence("ManualEntryfromAuto"));
         }
 
@@ -96,12 +112,8 @@ namespace Autotests.Tests
             //manageFoldersPage
             //    .OpenManageFoldersPage()
             //    .ClickDeleteButton()
-            //    .ClickConfirmDeleteButton();
-            //DocumentationRepository documentationRepository = new DocumentationRepository(DbConn);
-            //documentationRepository.DeleteParentFolder();
-            //DataBaseConnection dataBaseConnection = new DataBaseConnection();
-            //dataBaseConnection.Connection.Close();
-            FolderRepository folderRepository = new FolderRepository("Server = 13.233.48.253; Database = MPulseERP; User Id = mpulse; password = MPul53p@$$");
+            //    .ClickConfirmDeleteButton();        
+            FolderRepository folderRepository = new FolderRepository(connString);
             folderRepository.Delete("ParentFolderFromAutoTest");
         }
     }

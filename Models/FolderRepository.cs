@@ -41,6 +41,16 @@ namespace Autotests.Models
                 return db.Query<Folder>("SELECT * FROM [MPulseERP].[dbo].[DocumentFolder] WHERE Id = @id", new { id }).FirstOrDefault();
             }
         }
+        public int GetIdByFolderName()
+        {
+            using (IDbConnection db = new SqlConnection(connectionString))
+            {
+                var sqlQuery = "SELECT * FROM [MPulseERP].[dbo].[DocumentFolder] WHERE FolderName = 'ParentFolderFromAutoTest'";
+                int? folderId = db.Query<int>(sqlQuery).FirstOrDefault();
+                folderID = folderId.Value;
+            }
+            return folderID;
+        }
 
         public void Create(Folder folder)
         {
@@ -61,7 +71,6 @@ namespace Autotests.Models
             }
             return folderID;
         }
-
         public void Update(Folder folder)
         {
             using (IDbConnection db = new SqlConnection(connectionString))
